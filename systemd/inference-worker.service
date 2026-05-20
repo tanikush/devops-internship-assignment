@@ -1,0 +1,12 @@
+[Unit]
+Description=iii Inference Worker
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/hiring/may-2026/devops/quickstart
+ExecStart=/root/.iii/bin/iii worker start ./workers/inference-worker --engine ws://ENGINE_PRIVATE_IP:49134
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

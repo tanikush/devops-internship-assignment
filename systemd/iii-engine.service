@@ -1,0 +1,12 @@
+[Unit]
+Description=iii Engine
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/hiring/may-2026/devops/quickstart
+ExecStart=/root/.iii/bin/iii --config config.yaml --host 0.0.0.0
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
