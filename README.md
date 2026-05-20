@@ -16,6 +16,7 @@ A microservices-based ML inference system deployed on AWS cloud infrastructure. 
   <img width="700" alt="Architecture Diagram" src="screenshot/Architecture.png"/>
 </p>
 
+
 **Flow:** `Client → [Gateway VM / Nginx] → Engine VM → Inference VM → Response`
 
 | VM | Role | Subnet |
@@ -45,20 +46,7 @@ A microservices-based ML inference system deployed on AWS cloud infrastructure. 
 
 ## Security Scan — VibeScan
 
-> This project was validated using **[VibeScan](https://github.com/tanisha/vibescan)** — a custom security scanner I built that detects hardcoded secrets, API keys, and infrastructure misconfigurations.
-
-<table>
-  <tr>
-    <td align="center">🔴 <b>Critical</b></td>
-    <td align="center">🟠 <b>High</b></td>
-    <td align="center">🟡 <b>Medium</b></td>
-  </tr>
-  <tr>
-    <td align="center"><b>0</b></td>
-    <td align="center"><b>0</b></td>
-    <td align="center"><b>3</b></td>
-  </tr>
-</table>
+> This project was validated using **[VibeScan](https://github.com/tanikush/vibescan)** — a custom security scanner I built that detects hardcoded secrets, API keys, and infrastructure misconfigurations.
 
 The 3 Medium findings are Terraform template placeholders (`${engine_ip}`) — standard infrastructure patterns, **not hardcoded credentials**. No secrets or sensitive values are present in the codebase.
 
@@ -113,7 +101,7 @@ ssh key pair created in AWS
 ### Deploy Infrastructure
 ```bash
 # 1. Clone and navigate
-git clone <repo-url>
+git clone https://github.com/tanikush/devops-internship-assignment.git  
 cd devops-assignment/terraform
 
 # 2. Initialize Terraform
